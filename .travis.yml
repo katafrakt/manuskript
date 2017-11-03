@@ -4,7 +4,7 @@ os:
 - osx
 sudo: required
 script:
-- echo "Something must be here, otherwise Travis default script will be used and will fail."
+- python package/dependency_test.py
 before_deploy:
 - if [ "$TRAVIS_OS_NAME" = "osx" ]; then bash package/prepare_osx.sh; fi
 - export FILENAME=manuskript-$TRAVIS_BRANCH-$TRAVIS_OS_NAME.zip
